@@ -110,14 +110,10 @@ public class GreenImageScan {
                     JSONArray sceneResults = ((JSONObject) taskResult).getJSONArray("results");
                     if (200 == taskCode) {
                         for (Object sceneResult : sceneResults) {
-                            String scene = ((JSONObject) sceneResult).getString("scene");
                             String label = ((JSONObject) sceneResult).getString("label");
                             String suggestion = ((JSONObject) sceneResult).getString("suggestion");
                             //根据scene和suggetion做相关处理
                             //do something
-                            System.out.println("scene = [" + scene + "]");
-                            System.out.println("suggestion = [" + suggestion + "]");
-                            System.out.println("suggestion = [" + label + "]");
                             if (!suggestion.equals("pass")) {
                                 resultMap.put("suggestion", suggestion);
                                 resultMap.put("label", label);
